@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Motiva-T</title>
+  <link rel="stylesheet" href="styles.css"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>Motiva-T 💫</h1>
+    <h2>Tu espacio de ánimo y enfoque</h2>
+  </header>
+
+  <nav class="menu">
+    <button onclick="mostrarSeccion('inicio')">🏠 Inicio</button>
+    <button onclick="mostrarSeccion('registros')">📋 Historial</button>
+    <button onclick="mostrarSeccion('estadisticas')">📊 Estadísticas</button>
+  </nav>
+
+  <main>
+    <!-- Frases motivadoras -->
+    <section id="inicio" class="seccion activa">
+      <h2>Frase del día</h2>
+     <div class="frase-container">
+        <div id="fraseMotivadora" class="frase-box">Cargando...</div>
+        <button  onclick="nuevaFrase()">🔄</button>
+      </div>
+
+      <h2>¿Cómo te sentís hoy?</h2>
+      <form id="formulario">
+        <label for="estado">Estado emocional:</label>
+        <select id="estado" required>
+          <option value="😀">Feliz</option>
+          <option value="😐">Normal</option>
+          <option value="😞">Triste</option>
+          <option value="😠">Molesto</option>
+        </select>
+
+        <label for="tareas">Tareas importantes realizadas:</label>
+        <textarea id="tareas" required></textarea>
+
+        <label for="mejor">Lo mejor del día:</label>
+        <textarea id="mejor" required></textarea>
+
+        <button type="submit">💾 Guardar</button>
+      </form>
+    </section>
+
+    <!-- Historial -->
+    <section id="registros" class="seccion">
+      <h2>Historial</h2>
+      <label for="filtroEstado">Filtrar por estado de ánimo:</label>
+      <select id="filtroEstado" onchange="mostrarRegistros()">
+        <option value="">Todos</option>
+        <option value="😀">Feliz</option>
+        <option value="😐">Normal</option>
+        <option value="😞">Triste</option>
+        <option value="😠">Molesto</option>
+      </select>
+      <div id="registrosContainer"></div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section id="estadisticas" class="seccion">
+    <h2>Estadísticas</h2>
+    <canvas id="graficoBarras" width="400" height="250"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho con ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
