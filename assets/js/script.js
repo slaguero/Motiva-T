@@ -98,6 +98,7 @@ function eliminarRegistro(indice) {
   registros.splice(indice, 1);
   localStorage.setItem("registros", JSON.stringify(registros));
   mostrarRegistros();
+  mostrarToast("Registro eliminado ​✔️​");
 }
 
 let graficoBarras; 
