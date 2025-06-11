@@ -38,19 +38,4 @@ Cambiá la frase del día con el botón 🔄 para recibir una nueva inspiración
 
 Toca el botón de sol/luna para ir cambiando el tema hasta encontrar el que mas te guste.
 
-Estructura del proyecto
-Motiva-T/
-│
-├── assets/                   # Recursos estáticos de la aplicación
-│   ├── css/
-│   │   └── styles.css        # Estilos personalizados para la interfaz
-│   ├── img/
-│   │   └── ...               # Imágenes, íconos o capturas utilizadas en la app
-│   ├── js/
-│   │   └── script.js         # Lógica principal en JavaScript: funcionalidades de la app
-│
-├── docs/
-│   └── Proyecto Final.docx   # Documento con el informe del desarrollo del proyecto
-│
-├── index.html                # Archivo HTML principal de la aplicación web
-└── README.md                 # Descripción general del proyecto, uso y estructura
+![image](https://github.com/user-attachments/assets/e68b4e1b-43af-41b4-90c9-996a7e774441)
