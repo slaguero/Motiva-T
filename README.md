@@ -12,7 +12,7 @@ Características
 
 5. Estadísticas visuales con gráfico de barras para ver tus estados emocionales.
 
-Diseño oscuro, cómodo y accesible.
+6. Puedes personalizar con el tema que más te guste
 
 Tecnologías utilizadas
 HTML5
@@ -35,6 +35,8 @@ En "Historial" podés revisar tus registros anteriores y filtrarlos por estado e
 En "Estadísticas" podés visualizar un gráfico con el resumen de tus estados emocionales.
 
 Cambiá la frase del día con el botón 🔄 para recibir una nueva inspiración.
+
+Toca el botón de sol/luna para ir cambiando el tema hasta encontrar el que mas te guste.
 
 Estructura del proyecto
 Motiva-T/
