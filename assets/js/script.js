@@ -4,10 +4,21 @@ const frases = [
   "Hacelo con miedo, pero hacelo.",
   "Tu esfuerzo hoy es tu éxito mañana.",
   "Respirá, vos podés con esto.",
-  "Nada cambia si nada cambia.",
   "Sé constante, no perfecto.",
-  "Lo importante es avanzar, aunque sea de a poco."
+  "Lo importante es avanzar, aunque sea de a poco.",
+  "Todo logro empieza con la decisión de intentarlo.",
+  "No esperes a sentirte listo, empezá ahora.",
+  "El progreso, no la perfección, es lo que importa.",
+  "Estás más cerca de lo que pensás.",
+  "La disciplina tarde o temprano vence al talento.",
+  "Tu yo del futuro te va a agradecer por no rendirte hoy.",
+  "Cada pequeño paso cuenta.",
+  "No tenés que hacerlo todo hoy, solo algo.",
+  "Hoy es un buen día para avanzar, aunque sea un poquito.",
+  "No es suerte, es constancia.",
+  "Lo estás haciendo mejor de lo que creés."
 ];
+
 
 function nuevaFrase() {
   const frase = frases[Math.floor(Math.random() * frases.length)];
@@ -100,7 +111,7 @@ function mostrarEstadisticas() {
           conteo["😞"],
           conteo["😠"]
         ],
-        backgroundColor: ["#81C784", "#64B5F6", "#E57373", "#FFD54F"]
+        backgroundColor: ["#81C784", "#FFD54F", "#64B5F6", "#E57373"]
       }]
     },
     options: {
@@ -124,6 +135,40 @@ function mostrarEstadisticas() {
       }
     }
   });
+}
+const temas = [
+  { nombre: "Oscuro", clase: "tema-oscuro" },
+  { nombre: "Rosa", clase: "tema-rosa" },
+  { nombre: "Verde", clase: "tema-verde" },
+  { nombre: "Azul", clase: "tema-azul" },
+  { nombre: "Amarillo", clase: "tema-amarillo" },
+  { nombre: "Violeta", clase: "tema-violeta" }
+];
+
+let temaActual = 0;
+
+document.getElementById("botonInteractivo").addEventListener("click", () => {
+  temas.forEach(t => document.body.classList.remove(t.clase));
+  temaActual = (temaActual + 1) % temas.length;
+  const nuevoTema = temas[temaActual];
+  document.body.classList.add(nuevoTema.clase);
+  mostrarNotificacion(`Tema ${nuevoTema.nombre} activado`);
+});
+
+function mostrarNotificacion(mensaje) {
+  let noti = document.createElement("div");
+  noti.className = "notificacion-tema";
+  noti.textContent = mensaje;
+  document.body.appendChild(noti);
+
+  setTimeout(() => {
+    noti.classList.add("visible");
+  }, 10);
+
+  setTimeout(() => {
+    noti.classList.remove("visible");
+    setTimeout(() => noti.remove(), 300);
+  }, 2000);
 }
 
 window.onload = () => {

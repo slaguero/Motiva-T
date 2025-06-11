@@ -4,24 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Motiva-T</title>
-  <link rel="stylesheet" href="styles.css"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-
+  <script>
+    (function () {
+      const tema = localStorage.getItem("tema") || "tema-oscuro";
+      document.documentElement.classList.add(tema);
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>Motiva-T 💫</h1>
-    <h2>Tu espacio de ánimo y enfoque</h2>
+    <div class="contenedor-encabezado">
+      <div class="titulo-encabezado">
+        <h1>Motiva-T 💫</h1>
+        <h2>Tu espacio de ánimo y enfoque</h2>
+      </div>
+      <img src="assets/img/logo.png" alt="Logo" class="logo-encabezado">
+    </div>
   </header>
 
   <nav class="menu">
     <button onclick="mostrarSeccion('inicio')">🏠 Inicio</button>
     <button onclick="mostrarSeccion('registros')">📋 Historial</button>
     <button onclick="mostrarSeccion('estadisticas')">📊 Estadísticas</button>
+    <button id="botonInteractivo">
+      <img src="assets/img/oscuro-claro.png" alt="Logo" class="logo-modo">
+    </button>
   </nav>
 
   <main>
-    <!-- Frases motivadoras -->
+    <!-- Inicio -->
     <section id="inicio" class="seccion activa">
       <h2>Frase del día</h2>
      <div class="frase-container">
@@ -40,10 +53,10 @@
         </select>
 
         <label for="tareas">Tareas importantes realizadas:</label>
-        <textarea id="tareas" required></textarea>
+        <textarea id="tareas" required placeholder="Ej.: Terminé el informe, estudié redes..."></textarea>
 
         <label for="mejor">Lo mejor del día:</label>
-        <textarea id="mejor" required></textarea>
+        <textarea id="mejor" required placeholder="Ej.: Una charla con un amigo, un paseo, una siesta..."></textarea>
 
         <button type="submit">💾 Guardar</button>
       </form>
@@ -68,12 +81,13 @@
     <h2>Estadísticas</h2>
     <canvas id="graficoBarras" width="400" height="250"></canvas>
     </section>
+  </div>
   </main>
 
   <footer>
     <p>Hecho con ❤️</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

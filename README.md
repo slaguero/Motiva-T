@@ -37,6 +37,18 @@ En "Estadísticas" podés visualizar un gráfico con el resumen de tus estados e
 Cambiá la frase del día con el botón 🔄 para recibir una nueva inspiración.
 
 Estructura del proyecto
-/index.html       # Archivo principal HTML
-/styles.css       # Estilos CSS para el diseño
-/script.js        # Lógica y funcionalidad en JavaScript
+Motiva-T/
+│
+├── assets/                   # Recursos estáticos de la aplicación
+│   ├── css/
+│   │   └── styles.css        # Estilos personalizados para la interfaz
+│   ├── img/
+│   │   └── ...               # Imágenes, íconos o capturas utilizadas en la app
+│   ├── js/
+│   │   └── script.js         # Lógica principal en JavaScript: funcionalidades de la app
+│
+├── docs/
+│   └── Proyecto Final.docx   # Documento con el informe del desarrollo del proyecto
+│
+├── index.html                # Archivo HTML principal de la aplicación web
+└── README.md                 # Descripción general del proyecto, uso y estructura
