@@ -307,3 +307,26 @@ header, footer {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background-color: #eb5d5d;
+  color: #fff;
+  padding: 16px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  font-size: 1.1rem;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.toast.mostrar {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}

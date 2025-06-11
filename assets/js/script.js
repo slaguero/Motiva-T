@@ -38,9 +38,13 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const estado = document.getElementById("estado").value;
-  const tareas = document.getElementById("tareas").value;
-  const mejor = document.getElementById("mejor").value;
+  const tareas = document.getElementById("tareas").value.trim();
+  const mejor = document.getElementById("mejor").value.trim();
 
+  if (!tareas || !mejor) {
+    mostrarToast("Completá los campos 🤔");
+    return;
+  }
   const registro = {
     fecha: new Date().toLocaleDateString(),
     estado,
@@ -56,6 +60,16 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
   alert("Registro guardado 😊");
   mostrarSeccion("registros");
 });
+
+function mostrarToast(mensaje) {
+  const toast = document.getElementById("toast");
+  toast.textContent = mensaje;
+  toast.classList.add("mostrar");
+
+  setTimeout(() => {
+    toast.classList.remove("mostrar");
+  }, 3000); 
+}
 
 function mostrarRegistros() {
   const contenedor = document.getElementById("registrosContainer");
